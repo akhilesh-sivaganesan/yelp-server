@@ -43,7 +43,8 @@ pip install pickle5 \
     scikit-learn \
     matplotlib \
     flask \
-    flask_cors
+    flask_cors \
+    gunicorn
 
 # Display success message
 echo "All required libraries installed successfully!"
