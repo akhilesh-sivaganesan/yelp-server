@@ -27,11 +27,18 @@ else
     echo "Miniconda installed successfully!"
 fi
 
-# Step 2: Install RAPIDS dependencies with conda
+# Step 2: Create a Conda environment and install dependencies
+echo "Creating and activating Conda environment..."
+conda create -y -n myenv python=3.9 cudatoolkit=11.8
+
+# Activate the environment
+source $HOME/miniconda/bin/activate myenv
+
+# Step 3: Install RAPIDS dependencies with conda
 echo "Installing RAPIDS dependencies with conda..."
 conda install -c rapidsai -c nvidia -c conda-forge cuml=23.10 cudf=23.10 python=3.9 cudatoolkit=11.8 -y
 
-# Step 3: Install additional packages with pip
+# Step 4: Install additional Python packages with pip
 echo "Installing additional Python packages with pip..."
 pip install pickle5 \
     transformers \
